@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cdoc0jswjtkci"]
+
+[ext_resource type="PackedScene" uid="uid://slomko8ivbdu" path="res://player.tscn" id="1_3253y"]
+[ext_resource type="Script" uid="uid://bgeq7u0vtb8ul" path="res://scene.gd" id="1_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://dqdtlwti7hu6p" path="res://background.tscn" id="2_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://c0j5ud6u0c2vc" path="res://animal.tscn" id="3_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://c71nptuhbx87h" path="res://tanah.tscn" id="4_u3cyc"]
+
+[node name="scene" type="Node2D" unique_id=570026648]
+script = ExtResource("1_m7jmp")
+
+[node name="Player" parent="." unique_id=1754382246 instance=ExtResource("1_3253y")]
+position = Vector2(122, 576)
+
+[node name="Animal" parent="." unique_id=1273874415 instance=ExtResource("3_m7jmp")]
+position = Vector2(866, 564)
+
+[node name="tanah" parent="." unique_id=506938225 instance=ExtResource("4_u3cyc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1087594722]
+layer = -1
+
+[node name="Background" parent="CanvasLayer" unique_id=351979931 instance=ExtResource("2_u3cyc")]

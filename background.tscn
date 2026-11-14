@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dqdtlwti7hu6p"]
+
+[ext_resource type="Script" uid="uid://dnds7a8t3tkq5" path="res://background.gd" id="1_oabld"]
+[ext_resource type="Texture2D" uid="uid://d3hj2ewio2fcd" path="res://asset/Background -20261112T191842Z-1-001/Background /IMG_1592.PNG" id="2_eq6nc"]
+[ext_resource type="Texture2D" uid="uid://3o2tg57s7jj1" path="res://asset/Background -20261112T191842Z-1-001/Background /IMG_1600.PNG" id="3_bpugw"]
+[ext_resource type="Texture2D" uid="uid://cdj5jm2knuthd" path="res://asset/Background -20261112T191842Z-1-001/Background /IMG_1602.PNG" id="4_gjjrj"]
+[ext_resource type="Texture2D" uid="uid://dhld2760fjta3" path="res://asset/Background -20261112T191842Z-1-001/Background /IMG_1606.PNG" id="5_vvxqx"]
+
+[node name="Background" type="Node2D" unique_id=351979931]
+z_index = -1
+script = ExtResource("1_oabld")
+backgrounds = Array[Texture2D]([ExtResource("3_bpugw"), ExtResource("5_vvxqx"), ExtResource("4_gjjrj"), ExtResource("2_eq6nc")])
+
+[node name="BGsprite" type="Sprite2D" parent="." unique_id=1048719745]
+position = Vector2(578.75, 320)
+scale = Vector2(2.9804685, 2.6562498)
+texture = ExtResource("2_eq6nc")
