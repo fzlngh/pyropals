@@ -6,6 +6,7 @@ extends StaticBody2D
 
 
 func _ready() -> void:
+	position = Vector2(0, -40)
 	add_to_group("obstacles")
 	if is_hazard and hazard_zone:
 		hazard_zone.body_entered.connect(_on_hazard_zone_body_entered)

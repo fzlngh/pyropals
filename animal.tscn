@@ -1,19 +1,29 @@
 [gd_scene format=3 uid="uid://c0j5ud6u0c2vc"]
 
 [ext_resource type="Script" uid="uid://cqqd6kx7padt5" path="res://animal.gd" id="1_stvu6"]
-[ext_resource type="Texture2D" uid="uid://d3vdn2x53tqbx" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/Rusa.PNG" id="2_vhw0a"]
-[ext_resource type="Texture2D" uid="uid://cots2dt2aua6r" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/rusa kaget 1.PNG" id="3_wxjff"]
-[ext_resource type="Texture2D" uid="uid://dxw5clfbicj2g" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/rusa kaget 2.PNG" id="4_u68n1"]
-[ext_resource type="Texture2D" uid="uid://da6fdjtoavmuf" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/rusa kaget 3.PNG" id="5_rgvpj"]
-[ext_resource type="Texture2D" uid="uid://e6sk10ddsylk" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/rusa run 1.PNG" id="6_6ywbg"]
-[ext_resource type="Texture2D" uid="uid://bp1mij1h31xp6" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/rusa run 2.PNG" id="7_3y18d"]
-[ext_resource type="Texture2D" uid="uid://rdrimn461grj" path="res://asset/Hewan-20261113T123722Z-1-001/Hewan/rusa run 3.PNG" id="8_0yjm4"]
+[ext_resource type="Texture2D" uid="uid://dydqwjrgmu6pl" path="res://asset/Fire-20261112T191927Z-1-001/Hewan-20261114T103207Z-1-001/Hewan/rusa kaget 2.PNG" id="2_ifcgm"]
+[ext_resource type="Texture2D" uid="uid://bxuqo3vm8tnqk" path="res://asset/Fire-20261112T191927Z-1-001/Hewan-20261114T103207Z-1-001/Hewan/rev rusa captured.PNG" id="2_riyer"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3y18d"]
+load_path = "res://.godot/imported/rusa kaget 2.PNG-5e4da7eaf73ba536d52c9dd1addda742.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0yjm4"]
+load_path = "res://.godot/imported/rusa kaget 3.PNG-3e1b602f55d3ed30515580d079ce10be.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pxi3y"]
+load_path = "res://.godot/imported/rusa run 1.PNG-a5107dc0efdee9bc087d360c8918a9e5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xm3y7"]
+load_path = "res://.godot/imported/rusa run 2.PNG-5f86d724751fef2a4af3b61d4e7b6ebe.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bi2op"]
+load_path = "res://.godot/imported/rusa run 3.PNG-1b053efdca1a86cce9bd1e17e9a377c0.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7unfb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vhw0a")
+"texture": ExtResource("2_ifcgm")
 }],
 "loop": 1,
 "name": &"adle_forest",
@@ -21,32 +31,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_wxjff")
+"texture": SubResource("CompressedTexture2D_3y18d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_u68n1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_rgvpj")
+"texture": SubResource("CompressedTexture2D_0yjm4")
 }],
 "loop": 0,
 "name": &"alert",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_riyer")
+}],
 "loop": 0,
 "name": &"captured",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_6ywbg")
+"texture": SubResource("CompressedTexture2D_pxi3y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_3y18d")
+"texture": SubResource("CompressedTexture2D_xm3y7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_0yjm4")
+"texture": SubResource("CompressedTexture2D_bi2op")
 }],
 "loop": 1,
 "name": &"run_away",
@@ -54,29 +64,29 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
-radius = 105.0
-height = 324.0
+radius = 63.0
+height = 126.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iyn2x"]
-radius = 126.00397
+radius = 69.18092
 
 [node name="Animal" type="CharacterBody2D" unique_id=1273874415]
 z_index = 5
 script = ExtResource("1_stvu6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=553782420]
-position = Vector2(7, -73)
-scale = Vector2(0.25909832, 0.28322276)
+position = Vector2(3.999998, -60)
+scale = Vector2(0.22841804, 0.23638563)
 sprite_frames = SubResource("SpriteFrames_7unfb")
 animation = &"run_away"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1090761032]
-position = Vector2(7, -155)
+position = Vector2(10, -61)
 shape = SubResource("CapsuleShape2D_b26j0")
 
 [node name="Detect_area" type="Area2D" parent="." unique_id=1753246575]
 position = Vector2(16, -163)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_area" unique_id=1626719647]
-position = Vector2(-7, 46)
+position = Vector2(-7, 101)
 shape = SubResource("CircleShape2D_iyn2x")

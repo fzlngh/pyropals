@@ -10,7 +10,9 @@ var ujung_kanan_tanah: float = 0.0
 
 func _ready() -> void:
 	ujung_kanan_tanah = tanah_awal.position.x + lebar_tanah
-
+	player.player_died.connect(GameManager.on_player_died)
+	GameManager.reset_session()
+	$ObstacleSpawner.set_player(player)
 
 func _process(_delta: float) -> void:
 	if player.global_position.x + lebar_tanah > ujung_kanan_tanah:

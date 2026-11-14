@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvumtgnjdemqp"]
 
 [ext_resource type="Script" uid="uid://chochf14kg7hu" path="res://log.gd" id="1_5gxlv"]
-[ext_resource type="Texture2D" uid="uid://dxxaxu0lutmnt" path="res://asset/IMG_1623.PNG" id="2_a0a2b"]
+[ext_resource type="Texture2D" uid="uid://28yw4o3eskfa" path="res://asset/Background -20261112T191842Z-1-001/Background /wood-1@4x.png" id="2_a0a2b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iyn2x"]
 radius = 65.0
@@ -10,12 +10,11 @@ height = 130.0
 [node name="log" type="StaticBody2D" unique_id=209922010]
 script = ExtResource("1_5gxlv")
 
-[node name="gambar_log" type="Sprite2D" parent="." unique_id=452141774]
-position = Vector2(-1, -52)
-scale = Vector2(0.33553576, 0.26392853)
+[node name="gambar_log" type="Sprite2D" parent="." unique_id=1680662686]
+position = Vector2(-12.000015, -54.000015)
+scale = Vector2(0.11237375, 0.10348273)
 texture = ExtResource("2_a0a2b")
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1924824268]
-position = Vector2(-6, -53)
+position = Vector2(-15, -52)
 shape = SubResource("CapsuleShape2D_iyn2x")

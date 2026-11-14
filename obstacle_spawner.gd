@@ -5,7 +5,7 @@ extends Node2D
 @export var helicopter_scene: PackedScene
 
 @export var min_spawn_interval: float = 1.5
-@export var max_spawn_interval: float = 3.5
+@export var max_spawn_interval: float = 10
 
 @export_range(0.0, 1.0, 0.05) var helicopter_chance: float = 0.3
 

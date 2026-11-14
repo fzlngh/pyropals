@@ -1,22 +1,38 @@
 [gd_scene format=3 uid="uid://bl5rgtofj3pna"]
 
 [ext_resource type="Script" uid="uid://hgnglvh4dnh8" path="res://helicopter.gd" id="1_0d5e8"]
+[ext_resource type="Texture2D" uid="uid://ceeavdf85qpdv" path="res://asset/Background -20261112T191842Z-1-001/helicopter-20261114T091139Z-1-001/helicopter/IMG_1681.PNG" id="2_0lybf"]
+[ext_resource type="Texture2D" uid="uid://bg84jky0337ew" path="res://asset/Background -20261112T191842Z-1-001/helicopter-20261114T091139Z-1-001/helicopter/IMG_1682.PNG" id="3_l0d2j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iyn2x"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0lybf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l0d2j")
+}],
 "loop": 1,
 "name": &"fly",
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68h2w"]
+radius = 62.0
+height = 124.0
+
 [node name="Helicopter" type="Node2D" unique_id=499305613]
 script = ExtResource("1_0d5e8")
 
 [node name="HeliSprite" type="AnimatedSprite2D" parent="." unique_id=994596935]
+position = Vector2(1, -36)
+scale = Vector2(0.23615055, 0.33682528)
 sprite_frames = SubResource("SpriteFrames_iyn2x")
 animation = &"fly"
 
 [node name="HazardZone" type="Area2D" parent="." unique_id=46712951]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardZone" unique_id=1172806477]
+position = Vector2(3, -57)
+shape = SubResource("CapsuleShape2D_68h2w")

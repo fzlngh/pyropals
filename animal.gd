@@ -1,16 +1,19 @@
 extends CharacterBody2D
-
-enum State { IN_FOREST, ALERT, FLEEING, CAPTURED }
+enum State { IN_FOREST, ALERT, FLEEING, JUMPING, CAPTURED }
 
 @export var flee_speed: float = 140.0
 @export var detect_player_radius: float = 180.0
 @export var gravity: float = 1200.0
+
+@export var jump_velocity: float = -380.0
+@export var obstacle_ray_length: float = 36.0
 
 var state: State = State.IN_FOREST
 var player_ref: Node2D = null
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detect_area: Area2D = $Detect_area
+@onready var obstacle_ray: RayCast2D = $ObstacleRay
 
 
 func _ready() -> void:
@@ -25,6 +28,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0.0
 		State.FLEEING:
 			_flee(delta)
+		State.JUMPING:
+			_flee_in_air(delta)
 		State.CAPTURED:
 			velocity = Vector2.ZERO
 
@@ -33,16 +38,42 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	if state == State.JUMPING and is_on_floor():
+		state = State.FLEEING
+		anim.play("run_away")
+
 
 func _flee(_delta: float) -> void:
 	if not player_ref:
 		return
+
 	var dir := signf(global_position.x - player_ref.global_position.x)
 	if dir == 0.0:
 		dir = 1.0
 	velocity.x = dir * flee_speed
 	anim.flip_h = dir < 0.0
 	anim.play("run_away")
+
+	obstacle_ray.target_position = Vector2(obstacle_ray_length * dir, 0)
+	obstacle_ray.force_raycast_update()
+
+	if is_on_floor() and obstacle_ray.is_colliding():
+		var collider := obstacle_ray.get_collider()
+		if collider and collider.is_in_group("obstacles"):
+			velocity.y = jump_velocity
+			state = State.JUMPING
+			anim.play("jump")
+
+
+func _flee_in_air(_delta: float) -> void:
+	if not player_ref:
+		return
+
+	var dir := signf(global_position.x - player_ref.global_position.x)
+	if dir == 0.0:
+		dir = 1.0
+	velocity.x = dir * flee_speed
+	anim.flip_h = dir < 0.0
 
 
 func _on_detect_area_body_entered(body: Node2D) -> void:

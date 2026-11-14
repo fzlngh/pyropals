@@ -15,17 +15,11 @@ signal cage_used(global_pos: Vector2)
 
 func _ready() -> void:
 	add_to_group("player")
-	hurt_box.area_entered.connect(_on_hurtbox_area_entered)
 	hurt_box.body_entered.connect(_on_hurtbox_body_entered)
 
 	for action in ["move_left", "move_right", "jump", "use_cage"]:
 		if not InputMap.has_action(action):
 			push_error("Action '" + action + "' belum ada di Project Settings -> Input Map!")
-
-
-func _on_hurtbox_area_entered(area: Area2D) -> void:
-	_check_animal_touch(area.get_parent())
-
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	_check_animal_touch(body)
