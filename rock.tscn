@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d3yycujbja42h"]
+
+[node name="rock" type="StaticBody2D" unique_id=1501272929]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=216217378]

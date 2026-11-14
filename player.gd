@@ -18,7 +18,6 @@ func _ready() -> void:
 	hurt_box.area_entered.connect(_on_hurtbox_area_entered)
 	hurt_box.body_entered.connect(_on_hurtbox_body_entered)
 
-	# Cek otomatis di panel Output kalau ada nama aksi Input Map yang belum dibuat
 	for action in ["move_left", "move_right", "jump", "use_cage"]:
 		if not InputMap.has_action(action):
 			push_error("Action '" + action + "' belum ada di Project Settings -> Input Map!")

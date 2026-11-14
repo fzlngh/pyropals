@@ -4,7 +4,7 @@ signal animal_captured(total_captured: int)
 signal session_won
 signal session_lost
 
-@export var target_capture_count: int = 50  # berapa hewan harus ditangkap buat menang
+@export var target_capture_count: int = 50  
 
 var captured_count: int = 0
 var is_game_over: bool = false
