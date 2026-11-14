@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://c71nptuhbx87h"]
 
 [ext_resource type="Texture2D" uid="uid://bfygvpef2cnwa" path="res://asset/tanah 2.PNG" id="1_ajk2i"]
+[ext_resource type="Script" uid="uid://cycjtcjem6eis" path="res://tanah.gd" id="1_nsshe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyn2x"]
-size = Vector2(1161.75, 82.25)
+size = Vector2(1538.4688, 63)
 
 [node name="tanah" type="StaticBody2D" unique_id=506938225]
+script = ExtResource("1_nsshe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=541984099]
-position = Vector2(613.00006, 620.00006)
-scale = Vector2(3.3028572, 2.1161754)
+position = Vector2(603, 638)
+scale = Vector2(4.284286, 1.891308)
 texture = ExtResource("1_ajk2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847126420]
-position = Vector2(584, 617.125)
+position = Vector2(600.2344, 622)
 shape = SubResource("RectangleShape2D_iyn2x")

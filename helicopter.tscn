@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bl5rgtofj3pna"]
+
+[ext_resource type="Script" uid="uid://hgnglvh4dnh8" path="res://helicopter.gd" id="1_0d5e8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyn2x"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="Helicopter" type="Node2D" unique_id=499305613]
+script = ExtResource("1_0d5e8")
+
+[node name="HeliSprite" type="AnimatedSprite2D" parent="." unique_id=994596935]
+sprite_frames = SubResource("SpriteFrames_iyn2x")
+animation = &"fly"
+
+[node name="HazardZone" type="Area2D" parent="." unique_id=46712951]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardZone" unique_id=1172806477]

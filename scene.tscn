@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dqdtlwti7hu6p" path="res://background.tscn" id="2_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://c0j5ud6u0c2vc" path="res://animal.tscn" id="3_m7jmp"]
 [ext_resource type="PackedScene" uid="uid://c71nptuhbx87h" path="res://tanah.tscn" id="4_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://d3yycujbja42h" path="res://rock.tscn" id="5_73fnb"]
+[ext_resource type="PackedScene" uid="uid://cvumtgnjdemqp" path="res://log.tscn" id="7_5juve"]
+[ext_resource type="PackedScene" uid="uid://bl5rgtofj3pna" path="res://helicopter.tscn" id="8_fy5k1"]
+[ext_resource type="Script" uid="uid://bxf20gp2an1b1" path="res://obstacle_spawner.gd" id="9_5c1cw"]
+[ext_resource type="Texture2D" uid="uid://cdj5jm2knuthd" path="res://asset/Background -20261112T191842Z-1-001/Background /IMG_1602.PNG" id="10_5juve"]
 
 [node name="scene" type="Node2D" unique_id=570026648]
 script = ExtResource("1_m7jmp")
@@ -17,7 +22,20 @@ position = Vector2(866, 564)
 
 [node name="tanah" parent="." unique_id=506938225 instance=ExtResource("4_u3cyc")]
 
+[node name="rock" parent="." unique_id=740291060 instance=ExtResource("5_73fnb")]
+
+[node name="log" parent="." unique_id=209922010 instance=ExtResource("7_5juve")]
+
+[node name="Helicopter" parent="." unique_id=499305613 instance=ExtResource("8_fy5k1")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1087594722]
 layer = -1
 
-[node name="Background" parent="CanvasLayer" unique_id=351979931 instance=ExtResource("2_u3cyc")]
+[node name="ObstacleSpawner" type="Node2D" parent="." unique_id=1740105621]
+script = ExtResource("9_5c1cw")
+rock_scene = ExtResource("5_73fnb")
+log_scene = ExtResource("7_5juve")
+helicopter_scene = ExtResource("8_fy5k1")
+
+[node name="Background" parent="." unique_id=351979931 instance=ExtResource("2_u3cyc")]
+background_texture = ExtResource("10_5juve")
