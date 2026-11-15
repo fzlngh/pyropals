@@ -64,11 +64,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
-radius = 63.0
-height = 126.0
+radius = 71.0
+height = 156.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iyn2x"]
-radius = 69.18092
+radius = 113.35784
 
 [node name="Animal" type="CharacterBody2D" unique_id=1273874415]
 z_index = 5
@@ -78,7 +78,7 @@ script = ExtResource("1_stvu6")
 position = Vector2(3.999998, -60)
 scale = Vector2(0.22841804, 0.23638563)
 sprite_frames = SubResource("SpriteFrames_7unfb")
-animation = &"run_away"
+animation = &"adle_forest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1090761032]
 position = Vector2(10, -61)
@@ -90,3 +90,5 @@ position = Vector2(16, -163)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_area" unique_id=1626719647]
 position = Vector2(-7, 101)
 shape = SubResource("CircleShape2D_iyn2x")
+
+[node name="ObstacleRay" type="RayCast2D" parent="." unique_id=877714391]

@@ -1,9 +1,32 @@
 [gd_scene format=3 uid="uid://bovo4g48cef84"]
 
+[ext_resource type="Script" uid="uid://cv6gkfm46chb6" path="res://cage.gd" id="1_5ltu8"]
+[ext_resource type="Texture2D" uid="uid://cihdunuyt4qk8" path="res://asset/Background -20261112T191842Z-1-001/Background /IMG_1689.PNG" id="2_x6ecg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iyn2x"]
+radius = 97.0
+height = 276.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7unfb"]
+radius = 151.0
+height = 302.0
+
 [node name="cage" type="Node2D" unique_id=1898935396]
+script = ExtResource("1_5ltu8")
 
 [node name="gambar_cage" type="Sprite2D" parent="." unique_id=2035167627]
+position = Vector2(-14.999996, -78.999985)
+scale = Vector2(0.20714286, 0.24285717)
+texture = ExtResource("2_x6ecg")
 
 [node name="TrapZone" type="Area2D" parent="." unique_id=1922480830]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrapZone" unique_id=12961944]
+position = Vector2(-16, -107)
+shape = SubResource("CapsuleShape2D_iyn2x")
+
+[node name="LureZone" type="Area2D" parent="." unique_id=459576940]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LureZone" unique_id=767611122]
+position = Vector2(0, -115)
+shape = SubResource("CapsuleShape2D_7unfb")

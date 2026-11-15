@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bpqjdpud3k3qb"]
+
+[ext_resource type="Script" uid="uid://brwis6wls4m8" path="res://good_ending.gd" id="1_hoaxh"]
+[ext_resource type="Texture2D" uid="uid://cv3tipyxv2nn5" path="res://asset/Background -20261112T191842Z-1-001/Background /GOOD.png" id="2_rg0k8"]
+[ext_resource type="Texture2D" uid="uid://b874rcpl3i76d" path="res://asset/download-4x@2x.png" id="3_ostjc"]
+[ext_resource type="Texture2D" uid="uid://c7ts540nuwqu3" path="res://asset/download-4x@2x (1).png" id="4_000ck"]
+
+[node name="good_ending" type="Node2D" unique_id=2078106585]
+script = ExtResource("1_hoaxh")
+background_texture = ExtResource("2_rg0k8")
+
+[node name="BGSprite" type="Sprite2D" parent="." unique_id=281991291]
+position = Vector2(454, 228)
+
+[node name="RestartButton" type="TextureButton" parent="." unique_id=1047439998]
+offset_left = -132.0
+offset_top = 26.0
+offset_right = 1916.0
+offset_bottom = 2070.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_ostjc")
+texture_hover = ExtResource("4_000ck")

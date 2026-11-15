@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cvumtgnjdemqp" path="res://log.tscn" id="7_5juve"]
 [ext_resource type="PackedScene" uid="uid://bl5rgtofj3pna" path="res://helicopter.tscn" id="8_fy5k1"]
 [ext_resource type="Script" uid="uid://bxf20gp2an1b1" path="res://obstacle_spawner.gd" id="9_5c1cw"]
+[ext_resource type="Script" uid="uid://cpjt6kufj6gju" path="res://animal_spawner.gd" id="10_5juve"]
 
 [node name="scene" type="Node2D" unique_id=570026648]
 script = ExtResource("1_m7jmp")
@@ -20,12 +21,14 @@ position = Vector2(122, 576)
 position = Vector2(866, 564)
 
 [node name="tanah" parent="." unique_id=506938225 instance=ExtResource("4_u3cyc")]
+script = null
 
 [node name="rock" parent="." unique_id=740291060 instance=ExtResource("5_73fnb")]
 
 [node name="log" parent="." unique_id=209922010 instance=ExtResource("7_5juve")]
 
 [node name="Helicopter" parent="." unique_id=499305613 instance=ExtResource("8_fy5k1")]
+position = Vector2(-10, -1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1087594722]
 layer = -1
@@ -38,3 +41,7 @@ helicopter_scene = ExtResource("8_fy5k1")
 ground_y = 638.0
 
 [node name="Background" parent="." unique_id=351979931 instance=ExtResource("2_u3cyc")]
+
+[node name="AnimalSpawner" type="Node2D" parent="." unique_id=1925982185]
+script = ExtResource("10_5juve")
+animal_scene = ExtResource("3_m7jmp")
